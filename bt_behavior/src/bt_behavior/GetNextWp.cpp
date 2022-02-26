@@ -37,6 +37,9 @@ GetNextWp::GetNextWp(
   config().blackboard->get("node", node_);
   node_->declare_parameter("waypoints");
   wp_names_ = node_->get_parameter("waypoints").as_string_array();
+
+  RCLCPP_INFO(
+    node_->get_logger(), "GETNEXTWP init\n");
 }
 
 void
@@ -49,14 +52,23 @@ BT::NodeStatus
 GetNextWp::tick()
 {
   if (wp_names_.empty()) {
+    RCLCPP_INFO(
+      node_->get_logger(), "GETNEXTWP: All waypoints sent. Returning FAILURE");
+
     return BT::NodeStatus::FAILURE;
   }
 
   std::string wp_str = wp_names_.at(0);
   wp_names_.erase(wp_names_.begin());
+  RCLCPP_INFO(
+    node_->get_logger(), "GETNEXTWP: Next WP to send is %s", wp_str.c_str());
 
+  node_->declare_parameter(wp_str.c_str());
   geometry_msgs::msg::PoseStamped wp;
-  std::vector<double> coords = node_->get_parameter(wp_str).as_double_array();
+  std::vector<double> coords = node_->get_parameter(wp_str.c_str()).as_double_array();
+
+  RCLCPP_INFO(
+    node_->get_logger(), "x: %.2f, y: %.2f", coords.at(0), coords.at(1));
 
   wp.pose.position.x = coords.at(0);
   wp.pose.position.y = coords.at(1);
@@ -70,6 +82,9 @@ GetNextWp::tick()
   wp.header.stamp = node_->now();
 
   config().blackboard->set("waypoint", wp);
+
+  RCLCPP_INFO(
+    node_->get_logger(), "GETNEXTWP: %s sent. Returning SUCCESS", wp_str.c_str());
 
   return BT::NodeStatus::SUCCESS;
 }

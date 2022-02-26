@@ -26,11 +26,11 @@ def generate_launch_description():
     patrolling_cmd = Node(
         package='bt_behavior',
         executable='patrolling_main',
-        
+
         parameters=[config,
-        {
-          'use_sim_time': True
-        }],
+                    {
+                      'use_sim_time': True
+                    }],
         remappings=[
           ('input_scan', '/scan_raw'),
           ('output_vel', '/nav_vel')

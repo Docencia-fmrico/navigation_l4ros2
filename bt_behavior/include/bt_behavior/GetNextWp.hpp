@@ -1,3 +1,4 @@
+// Copyright 2022 <ivrolan>
 #ifndef BT_BEHAVIOR__GETNEXTWP_HPP_
 #define BT_BEHAVIOR__GETNEXTWP_HPP_
 
@@ -16,7 +17,7 @@ namespace bt_behavior
 
 class GetNextWp : public BT::ActionNodeBase
 {
- public:
+public:
   explicit GetNextWp(
     const std::string & xml_tag_name,
     const BT::NodeConfiguration & conf);
@@ -30,7 +31,7 @@ class GetNextWp : public BT::ActionNodeBase
     };
   }
 
- private:
+private:
   rclcpp::Node::SharedPtr node_;  // a node to get the wp parameters
   std::vector<std::string> wp_names_;
 };

@@ -14,6 +14,7 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
 
 #include "bt_behavior/GetNextWp.hpp"
 
@@ -53,7 +54,7 @@ GetNextWp::tick()
 
   std::string wp_str = wp_names_.at(0);
   wp_names_.erase(wp_names_.begin());
-  
+
   geometry_msgs::msg::PoseStamped wp;
   std::vector<double> coords = node_->get_parameter(wp_str).as_double_array();
 
@@ -71,7 +72,6 @@ GetNextWp::tick()
   config().blackboard->set("waypoint", wp);
 
   return BT::NodeStatus::SUCCESS;
-
 }
 
 }  // namespace bt_behavior

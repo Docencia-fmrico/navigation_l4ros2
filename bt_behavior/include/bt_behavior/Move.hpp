@@ -38,6 +38,10 @@ public:
   void on_tick() override;
   BT::NodeStatus on_success() override;
   // We'll need also on_aborted() and on_cancelled() to implement the behavior in case of failing
+
+  BT::NodeStatus on_aborted() override;
+  BT::NodeStatus on_cancelled() override;
+
   static BT::PortsList providedPorts()
   {
     return {

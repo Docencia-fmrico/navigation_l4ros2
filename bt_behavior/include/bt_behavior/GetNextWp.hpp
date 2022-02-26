@@ -23,7 +23,6 @@ class GetNextWp : public BT::ActionNodeBase
 
   BT::NodeStatus tick();
   void halt();
-
   static BT::PortsList providedPorts()
   {
     return {

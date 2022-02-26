@@ -34,7 +34,7 @@ GetNextWp::GetNextWp(
 : BT::ActionNodeBase(xml_tag_name, conf)
 {
   config().blackboard->get("node", node_);
-
+  node_->declare_parameter("waypoints");
   wp_names_ = node_->get_parameter("waypoints").as_string_array();
 }
 

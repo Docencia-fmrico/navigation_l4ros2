@@ -81,7 +81,7 @@ GetNextWp::tick()
   wp.header.frame_id = "map";
   wp.header.stamp = node_->now();
 
-  config().blackboard->set("waypoint", wp);
+  setOutput("waypoint", wp);
 
   RCLCPP_INFO(
     node_->get_logger(), "GETNEXTWP: %s sent. Returning SUCCESS", wp_str.c_str());

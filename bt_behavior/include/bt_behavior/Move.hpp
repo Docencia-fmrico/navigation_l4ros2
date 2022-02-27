@@ -23,6 +23,7 @@
 #include "bt_behavior/ctrl_support/BTActionNode.hpp"
 #include "behaviortree_cpp_v3/behavior_tree.h"
 #include "behaviortree_cpp_v3/bt_factory.h"
+#include "rclcpp/duration.hpp"
 
 namespace bt_behavior
 {
@@ -41,7 +42,6 @@ public:
 
   BT::NodeStatus on_aborted() override;
   BT::NodeStatus on_cancelled() override;
-
   static BT::PortsList providedPorts()
   {
     return {
@@ -51,5 +51,4 @@ public:
 };
 
 }  // namespace bt_behavior
-
 #endif  // BT_BEHAVIOR__MOVE_HPP_

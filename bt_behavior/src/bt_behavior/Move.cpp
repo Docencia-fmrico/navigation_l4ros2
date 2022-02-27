@@ -41,7 +41,6 @@ Move::on_tick()
 {
   geometry_msgs::msg::PoseStamped goal;
   getInput("goal", goal);
-
   goal_.pose = goal;
 }
 

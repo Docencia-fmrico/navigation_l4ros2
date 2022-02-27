@@ -5,7 +5,11 @@
         <KeepRunningUntilFailure>
             <Sequence>
                 <Action ID="GetNextWp" waypoint="{wp}"/>
-                <Action ID="Move" goal="{wp}"/>
+                <ForceSuccess>
+                    <Timeout msec="10000">
+                        <Action ID="Move" goal="{wp}"/>
+                    </Timeout>
+                </ForceSuccess>
             </Sequence>
         </KeepRunningUntilFailure>
     </BehaviorTree>

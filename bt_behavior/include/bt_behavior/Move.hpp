@@ -23,6 +23,7 @@
 #include "bt_behavior/ctrl_support/BTActionNode.hpp"
 #include "behaviortree_cpp_v3/behavior_tree.h"
 #include "behaviortree_cpp_v3/bt_factory.h"
+#include "rclcpp/duration.hpp"
 
 namespace bt_behavior
 {
@@ -37,7 +38,10 @@ public:
 
   void on_tick() override;
   BT::NodeStatus on_success() override;
+  // We'll need also on_aborted() and on_cancelled() to implement the behavior in case of failing
 
+  BT::NodeStatus on_aborted() override;
+  BT::NodeStatus on_cancelled() override;
   static BT::PortsList providedPorts()
   {
     return {
@@ -47,5 +51,4 @@ public:
 };
 
 }  // namespace bt_behavior
-
 #endif  // BT_BEHAVIOR__MOVE_HPP_

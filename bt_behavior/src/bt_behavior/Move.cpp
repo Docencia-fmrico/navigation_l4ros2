@@ -41,7 +41,6 @@ Move::on_tick()
 {
   geometry_msgs::msg::PoseStamped goal;
   getInput("goal", goal);
-
   goal_.pose = goal;
 }
 
@@ -53,6 +52,17 @@ Move::on_success()
   return BT::NodeStatus::SUCCESS;
 }
 
+BT::NodeStatus Move::on_aborted()
+{
+  RCLCPP_INFO(node_->get_logger(), "navigation Aborted");
+  return BT::NodeStatus::FAILURE;
+}
+
+BT::NodeStatus Move::on_cancelled()
+{
+  RCLCPP_INFO(node_->get_logger(), "navigation Cancelled");
+  return BT::NodeStatus::FAILURE;
+}
 
 }  // namespace bt_behavior
 

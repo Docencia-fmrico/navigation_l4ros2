@@ -21,6 +21,7 @@
 
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
+#include "kobuki_ros_interfaces/msg/sound"
 
 #include "behaviortree_cpp_v3/behavior_tree.h"
 
@@ -34,6 +35,7 @@ Move::Move(
 : bt_behavior::BtActionNode<nav2_msgs::action::NavigateToPose>(xml_tag_name, action_name,
     conf)
 {
+  publisher_ = this->create_publisher<kobuki_ros_interfaces::msg::Sound>("commands/sound", 10);
 }
 
 void
@@ -48,6 +50,10 @@ BT::NodeStatus
 Move::on_success()
 {
   RCLCPP_INFO(node_->get_logger(), "navigation Suceeded");
+
+  auto message = kobuki_ros_interfaces::msg::Sound();
+  message.value = 2;
+  publisher_->publish(message);
 
   return BT::NodeStatus::SUCCESS;
 }

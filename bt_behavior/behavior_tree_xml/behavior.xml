@@ -6,9 +6,9 @@
             <Sequence>
                 <Action ID="GetNextWp" waypoint="{wp}"/>
                 <ForceSuccess>
-                    <Timeout msec="10000">
-                        <Action ID="Move" goal="{wp}"/>
-                    </Timeout>
+                    
+                    <Action ID="Move" goal="{wp}"/>
+                    
                 </ForceSuccess>
             </Sequence>
         </KeepRunningUntilFailure>

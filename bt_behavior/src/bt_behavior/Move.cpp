@@ -36,7 +36,8 @@ Move::Move(
     conf)
 {
   config().blackboard->get("node", sound_node_);
-  sound_publisher_ = sound_node_->create_publisher<kobuki_ros_interfaces::msg::Sound>("/commands/sound", 10);
+  sound_publisher_ = sound_node_->create_publisher<kobuki_ros_interfaces::msg::Sound>(
+    "/commands/sound", 10);
 }
 
 void

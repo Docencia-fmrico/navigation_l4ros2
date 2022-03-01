@@ -21,7 +21,7 @@
 
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
-#include "kobuki_ros_interfaces/msg/sound"
+#include "kobuki_ros_interfaces/msg/sound.hpp"
 
 #include "behaviortree_cpp_v3/behavior_tree.h"
 
@@ -35,7 +35,8 @@ Move::Move(
 : bt_behavior::BtActionNode<nav2_msgs::action::NavigateToPose>(xml_tag_name, action_name,
     conf)
 {
-  publisher_ = this->create_publisher<kobuki_ros_interfaces::msg::Sound>("commands/sound", 10);
+  config().blackboard->get("node", sound_node_);
+  sound_publisher_ = sound_node_->create_publisher<kobuki_ros_interfaces::msg::Sound>("/commands/sound", 10);
 }
 
 void
@@ -52,8 +53,8 @@ Move::on_success()
   RCLCPP_INFO(node_->get_logger(), "navigation Suceeded");
 
   auto message = kobuki_ros_interfaces::msg::Sound();
-  message.value = 2;
-  publisher_->publish(message);
+  message.value = 0;
+  sound_publisher_->publish(message);
 
   return BT::NodeStatus::SUCCESS;
 }
@@ -61,12 +62,22 @@ Move::on_success()
 BT::NodeStatus Move::on_aborted()
 {
   RCLCPP_INFO(node_->get_logger(), "navigation Aborted");
+
+  auto message = kobuki_ros_interfaces::msg::Sound();
+  message.value = 1;
+  sound_publisher_->publish(message);
+
   return BT::NodeStatus::FAILURE;
 }
 
 BT::NodeStatus Move::on_cancelled()
 {
   RCLCPP_INFO(node_->get_logger(), "navigation Cancelled");
+
+  auto message = kobuki_ros_interfaces::msg::Sound();
+  message.value = 1;
+  sound_publisher_->publish(message);
+
   return BT::NodeStatus::FAILURE;
 }
 

@@ -16,13 +16,16 @@
 #define BT_BEHAVIOR__MOVE_HPP_
 
 #include <string>
+#include <memory>
 
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
+#include "kobuki_ros_interfaces/msg/sound.hpp"
 
 #include "bt_behavior/ctrl_support/BTActionNode.hpp"
 #include "behaviortree_cpp_v3/behavior_tree.h"
 #include "behaviortree_cpp_v3/bt_factory.h"
+#include "rclcpp/rclcpp.hpp"
 #include "rclcpp/duration.hpp"
 
 namespace bt_behavior
@@ -48,6 +51,10 @@ public:
       BT::InputPort<geometry_msgs::msg::PoseStamped>("goal")
     };
   }
+
+private:
+  std::shared_ptr<rclcpp::Node> sound_node_;
+  rclcpp::Publisher<kobuki_ros_interfaces::msg::Sound>::SharedPtr sound_publisher_;
 };
 
 }  // namespace bt_behavior

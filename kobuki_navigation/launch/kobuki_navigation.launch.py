@@ -36,7 +36,7 @@ def generate_launch_description():
 
     declare_params_file_cmd = DeclareLaunchArgument(
         'params_file',
-        default_value=os.path.join(launch_rmw_dir, 'params', 'kobuki_nav_params.yaml'),
+        default_value=os.path.join(launch_rmw_dir, 'params', 'tiago_nav_params.yaml'),
         description='Full path to the ROS2 parameters file to use for all launched nodes')
 
     declare_slam_cmd = DeclareLaunchArgument(
@@ -46,12 +46,12 @@ def generate_launch_description():
 
     declare_map_yaml_cmd = DeclareLaunchArgument(
         'map',
-        default_value=os.path.join(launch_rmw_dir, 'maps', 'home.yaml'),
+        default_value=os.path.join(launch_rmw_dir, 'maps', 'arena.yaml'),
         description='Full path to map yaml file to load')
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         'use_sim_time',
-        default_value='True',
+        default_value='False',
         description='Use simulation (Gazebo) clock if true')
 
     declare_autostart_cmd = DeclareLaunchArgument(

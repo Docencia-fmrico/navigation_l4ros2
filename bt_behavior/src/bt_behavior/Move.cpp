@@ -22,11 +22,13 @@
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 #include "kobuki_ros_interfaces/msg/sound.hpp"
+#include "kobuki_ros_interfaces/msg/led.hpp"
 
 #include "behaviortree_cpp_v3/behavior_tree.h"
 
 #define ERROR_SOUND_NUM 5
 #define SUCCESS_SOUND_NUM 6
+#define OFF_LED_VAL 0
 #define GREEN_LED_VAL 1
 #define RED_LED_VAL 3
 
@@ -53,6 +55,10 @@ Move::on_tick()
   geometry_msgs::msg::PoseStamped goal;
   getInput("goal", goal);
   goal_.pose = goal;
+
+  auto led_message = kobuki_ros_interfaces::msg::Led();
+  led_message.value = OFF_LED_VAL;
+  led_publisher_->publish(led_message);
 }
 
 BT::NodeStatus

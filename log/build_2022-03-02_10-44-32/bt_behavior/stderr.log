@@ -1,0 +1,15 @@
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:[m[K In constructor ‘[01m[Kbt_behavior::SoundFeedback::SoundFeedback(const string&, const BT::NodeConfiguration&)[m[K’:
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:41:7:[m[K [01;31m[Kerror: [m[Ktype ‘[01m[KBT::ActionNodeBase[m[K’ is not a direct base of ‘[01m[Kbt_behavior::SoundFeedback[m[K’
+   41 | : BT::[01;31m[KActionNodeBase[m[K(xml_tag_name, conf)
+      |       [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:41:40:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[Kbt_behavior::BtActionNode<ActionT, NodeT>::BtActionNode() [with ActionT = nav2_msgs::action::NavigateToPose; NodeT = rclcpp::Node][m[K’
+   41 | : BT::ActionNodeBase(xml_tag_name, conf[01;31m[K)[m[K
+      |                                        [01;31m[K^[m[K
+In file included from [01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/include/bt_behavior/SoundFeedback.hpp:26[m[K,
+                 from [01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:20[m[K:
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/include/bt_behavior/ctrl_support/BTActionNode.hpp:58:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   58 |   [01;36m[KBtActionNode[m[K() = delete;
+      |   [01;36m[K^~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/br2_sound_feedback_bt_node.dir/build.make:63: CMakeFiles/br2_sound_feedback_bt_node.dir/src/bt_behavior/SoundFeedback.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:235: CMakeFiles/br2_sound_feedback_bt_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

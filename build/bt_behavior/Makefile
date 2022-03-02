@@ -56,40 +56,6 @@ CMAKE_BINARY_DIR = /home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -101,6 +67,16 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -114,15 +90,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target test
+test/fast: test
 
-.PHONY : list_install_components/fast
+.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -134,6 +111,29 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,30 +168,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named br2_get_waypoint_bt_node
+# Target rules for targets named bt_behavior_uninstall
 
 # Build rule for target.
-br2_get_waypoint_bt_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 br2_get_waypoint_bt_node
-.PHONY : br2_get_waypoint_bt_node
+bt_behavior_uninstall: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bt_behavior_uninstall
+.PHONY : bt_behavior_uninstall
 
 # fast build rule for target.
-br2_get_waypoint_bt_node/fast:
-	$(MAKE) -f CMakeFiles/br2_get_waypoint_bt_node.dir/build.make CMakeFiles/br2_get_waypoint_bt_node.dir/build
-.PHONY : br2_get_waypoint_bt_node/fast
-
-#=============================================================================
-# Target rules for targets named br2_move_bt_node
-
-# Build rule for target.
-br2_move_bt_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 br2_move_bt_node
-.PHONY : br2_move_bt_node
-
-# fast build rule for target.
-br2_move_bt_node/fast:
-	$(MAKE) -f CMakeFiles/br2_move_bt_node.dir/build.make CMakeFiles/br2_move_bt_node.dir/build
-.PHONY : br2_move_bt_node/fast
+bt_behavior_uninstall/fast:
+	$(MAKE) -f CMakeFiles/bt_behavior_uninstall.dir/build.make CMakeFiles/bt_behavior_uninstall.dir/build
+.PHONY : bt_behavior_uninstall/fast
 
 #=============================================================================
 # Target rules for targets named patrolling_main
@@ -207,30 +194,43 @@ patrolling_main/fast:
 .PHONY : patrolling_main/fast
 
 #=============================================================================
-# Target rules for targets named br2_patrol_bt_node
+# Target rules for targets named br2_move_bt_node
 
 # Build rule for target.
-br2_patrol_bt_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 br2_patrol_bt_node
-.PHONY : br2_patrol_bt_node
+br2_move_bt_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 br2_move_bt_node
+.PHONY : br2_move_bt_node
 
 # fast build rule for target.
-br2_patrol_bt_node/fast:
-	$(MAKE) -f CMakeFiles/br2_patrol_bt_node.dir/build.make CMakeFiles/br2_patrol_bt_node.dir/build
-.PHONY : br2_patrol_bt_node/fast
+br2_move_bt_node/fast:
+	$(MAKE) -f CMakeFiles/br2_move_bt_node.dir/build.make CMakeFiles/br2_move_bt_node.dir/build
+.PHONY : br2_move_bt_node/fast
 
 #=============================================================================
-# Target rules for targets named bt_behavior_uninstall
+# Target rules for targets named br2_get_waypoint_bt_node
 
 # Build rule for target.
-bt_behavior_uninstall: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bt_behavior_uninstall
-.PHONY : bt_behavior_uninstall
+br2_get_waypoint_bt_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 br2_get_waypoint_bt_node
+.PHONY : br2_get_waypoint_bt_node
 
 # fast build rule for target.
-bt_behavior_uninstall/fast:
-	$(MAKE) -f CMakeFiles/bt_behavior_uninstall.dir/build.make CMakeFiles/bt_behavior_uninstall.dir/build
-.PHONY : bt_behavior_uninstall/fast
+br2_get_waypoint_bt_node/fast:
+	$(MAKE) -f CMakeFiles/br2_get_waypoint_bt_node.dir/build.make CMakeFiles/br2_get_waypoint_bt_node.dir/build
+.PHONY : br2_get_waypoint_bt_node/fast
+
+#=============================================================================
+# Target rules for targets named br2_sound_feedback_bt_node
+
+# Build rule for target.
+br2_sound_feedback_bt_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 br2_sound_feedback_bt_node
+.PHONY : br2_sound_feedback_bt_node
+
+# fast build rule for target.
+br2_sound_feedback_bt_node/fast:
+	$(MAKE) -f CMakeFiles/br2_sound_feedback_bt_node.dir/build.make CMakeFiles/br2_sound_feedback_bt_node.dir/build
+.PHONY : br2_sound_feedback_bt_node/fast
 
 #=============================================================================
 # Target rules for targets named uninstall
@@ -244,6 +244,19 @@ uninstall: cmake_check_build_system
 uninstall/fast:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
+
+#=============================================================================
+# Target rules for targets named br2_patrol_bt_node
+
+# Build rule for target.
+br2_patrol_bt_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 br2_patrol_bt_node
+.PHONY : br2_patrol_bt_node
+
+# fast build rule for target.
+br2_patrol_bt_node/fast:
+	$(MAKE) -f CMakeFiles/br2_patrol_bt_node.dir/build.make CMakeFiles/br2_patrol_bt_node.dir/build
+.PHONY : br2_patrol_bt_node/fast
 
 #=============================================================================
 # Target rules for targets named bt_action_test
@@ -365,6 +378,33 @@ src/bt_behavior/Patrol.cpp.s:
 	$(MAKE) -f CMakeFiles/br2_patrol_bt_node.dir/build.make CMakeFiles/br2_patrol_bt_node.dir/src/bt_behavior/Patrol.cpp.s
 .PHONY : src/bt_behavior/Patrol.cpp.s
 
+src/bt_behavior/SoundFeedback.o: src/bt_behavior/SoundFeedback.cpp.o
+
+.PHONY : src/bt_behavior/SoundFeedback.o
+
+# target to build an object file
+src/bt_behavior/SoundFeedback.cpp.o:
+	$(MAKE) -f CMakeFiles/br2_sound_feedback_bt_node.dir/build.make CMakeFiles/br2_sound_feedback_bt_node.dir/src/bt_behavior/SoundFeedback.cpp.o
+.PHONY : src/bt_behavior/SoundFeedback.cpp.o
+
+src/bt_behavior/SoundFeedback.i: src/bt_behavior/SoundFeedback.cpp.i
+
+.PHONY : src/bt_behavior/SoundFeedback.i
+
+# target to preprocess a source file
+src/bt_behavior/SoundFeedback.cpp.i:
+	$(MAKE) -f CMakeFiles/br2_sound_feedback_bt_node.dir/build.make CMakeFiles/br2_sound_feedback_bt_node.dir/src/bt_behavior/SoundFeedback.cpp.i
+.PHONY : src/bt_behavior/SoundFeedback.cpp.i
+
+src/bt_behavior/SoundFeedback.s: src/bt_behavior/SoundFeedback.cpp.s
+
+.PHONY : src/bt_behavior/SoundFeedback.s
+
+# target to generate assembly for a file
+src/bt_behavior/SoundFeedback.cpp.s:
+	$(MAKE) -f CMakeFiles/br2_sound_feedback_bt_node.dir/build.make CMakeFiles/br2_sound_feedback_bt_node.dir/src/bt_behavior/SoundFeedback.cpp.s
+.PHONY : src/bt_behavior/SoundFeedback.cpp.s
+
 src/patrolling_main.o: src/patrolling_main.cpp.o
 
 .PHONY : src/patrolling_main.o
@@ -398,19 +438,20 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/local"
-	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... install/strip"
-	@echo "... br2_get_waypoint_bt_node"
-	@echo "... br2_move_bt_node"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... patrolling_main"
-	@echo "... br2_patrol_bt_node"
 	@echo "... bt_behavior_uninstall"
+	@echo "... patrolling_main"
+	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... br2_move_bt_node"
+	@echo "... br2_get_waypoint_bt_node"
+	@echo "... br2_sound_feedback_bt_node"
 	@echo "... uninstall"
+	@echo "... test"
+	@echo "... br2_patrol_bt_node"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... install/local"
 	@echo "... bt_action_test"
 	@echo "... gtest_main"
 	@echo "... gtest"
@@ -423,6 +464,9 @@ help:
 	@echo "... src/bt_behavior/Patrol.o"
 	@echo "... src/bt_behavior/Patrol.i"
 	@echo "... src/bt_behavior/Patrol.s"
+	@echo "... src/bt_behavior/SoundFeedback.o"
+	@echo "... src/bt_behavior/SoundFeedback.i"
+	@echo "... src/bt_behavior/SoundFeedback.s"
 	@echo "... src/patrolling_main.o"
 	@echo "... src/patrolling_main.i"
 	@echo "... src/patrolling_main.s"

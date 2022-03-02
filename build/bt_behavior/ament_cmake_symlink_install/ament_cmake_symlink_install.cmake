@@ -310,7 +310,7 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install("TARGETS" "br2_get_waypoint_bt_node" "br2_patrol_bt_node" "br2_move_bt_node" "patrolling_main" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "lib/bt_behavior")
+# install("TARGETS" "br2_get_waypoint_bt_node" "br2_patrol_bt_node" "br2_move_bt_node" "br2_sound_feedback_bt_node" "patrolling_main" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "lib/bt_behavior")
 include("/home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(DIRECTORY "include/" "DESTINATION" "include/")

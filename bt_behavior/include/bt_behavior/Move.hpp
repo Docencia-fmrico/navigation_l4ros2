@@ -55,8 +55,6 @@ public:
 
 private:
   std::shared_ptr<rclcpp::Node> sound_node_;
-  rclcpp::Publisher<kobuki_ros_interfaces::msg::Sound>::SharedPtr sound_publisher_;
-  rclcpp::Publisher<kobuki_ros_interfaces::msg::Led>::SharedPtr led_publisher_;
 };
 
 }  // namespace bt_behavior

@@ -1,0 +1,58 @@
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:49:1:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[KBT::NodeStatus bt_behavior::SoundFeedback::on_tick()[m[K’
+   49 | [01;31m[KSoundFeedback[m[K::on_tick()
+      | [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:49:1:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[KBT::NodeStatus bt_behavior::SoundFeedback::on_tick()[m[K’
+In file included from [01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:20[m[K:
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/include/bt_behavior/SoundFeedback.hpp:35:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass bt_behavior::SoundFeedback[m[K’ defined here
+   35 | class [01;36m[KSoundFeedback[m[K : public BT::ActionNodeBase
+      |       [01;36m[K^~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/include/bt_behavior/SoundFeedback.hpp:28[m[K,
+                 from [01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:20[m[K:
+/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h: In instantiation of ‘[01m[Kvoid BT::BehaviorTreeFactory::registerNodeType(const string&) [with T = bt_behavior::SoundFeedback; std::string = std::__cxx11::basic_string<char>][m[K’:
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:76:71:[m[K   required from here
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:299:23:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: [registerNode]: Some methods are pure virtual. Did you override the methods tick() and halt()?
+  299 |         static_assert([01;31m[K!std::is_abstract<T>::value[m[K,
+      |                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:309:45:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: [registerNode]: the registered class must have at least one of these two constructors:   (const std::string&, const NodeConfiguration&) or (const std::string&).
+  309 |         static_assert([01;31m[Kdefault_constructable || param_constructable[m[K,
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:318:23:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: [registerNode]: since you have a static method providedPorts(), you MUST add a constructor sign signature (const std::string&, const NodeParameters&)
+
+  318 |         static_assert([01;31m[K!(has_static_ports_list && !param_constructable)[m[K,
+      |                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:323:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KCreateBuilder<bt_behavior::SoundFeedback>()[m[K’
+  323 |         registerBuilder( CreateManifest<T>(ID), [01;31m[KCreateBuilder<T>()[m[K);
+      |                                                 [01;31m[K~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/include/bt_behavior/SoundFeedback.hpp:28[m[K,
+                 from [01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:20[m[K:
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:43:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> BT::NodeBuilder BT::CreateBuilder(typename std::enable_if<(std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::value && std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfiguration&>::value)>::type*)[m[K’
+   43 |   NodeBuilder [01;36m[KCreateBuilder[m[K(typename std::enable_if<has_default_constructor<T>::value &&
+      |               [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:43:15:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h: In substitution of ‘[01m[Ktemplate<class T> BT::NodeBuilder BT::CreateBuilder(typename std::enable_if<(std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::value && std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfiguration&>::value)>::type*) [with T = bt_behavior::SoundFeedback][m[K’:
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:323:65:[m[K   required from ‘[01m[Kvoid BT::BehaviorTreeFactory::registerNodeType(const string&) [with T = bt_behavior::SoundFeedback; std::string = std::__cxx11::basic_string<char>][m[K’
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:76:71:[m[K   required from here
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:43:15:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, void>[m[K’
+/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h: In instantiation of ‘[01m[Kvoid BT::BehaviorTreeFactory::registerNodeType(const string&) [with T = bt_behavior::SoundFeedback; std::string = std::__cxx11::basic_string<char>][m[K’:
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:76:71:[m[K   required from here
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:60:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> BT::NodeBuilder BT::CreateBuilder(typename std::enable_if<((! std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::value) && std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfiguration&>::value)>::type*)[m[K’
+   60 |   NodeBuilder [01;36m[KCreateBuilder[m[K(typename std::enable_if<!has_default_constructor<T>::value &&
+      |               [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:60:15:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h: In substitution of ‘[01m[Ktemplate<class T> BT::NodeBuilder BT::CreateBuilder(typename std::enable_if<((! std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::value) && std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfiguration&>::value)>::type*) [with T = bt_behavior::SoundFeedback][m[K’:
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:323:65:[m[K   required from ‘[01m[Kvoid BT::BehaviorTreeFactory::registerNodeType(const string&) [with T = bt_behavior::SoundFeedback; std::string = std::__cxx11::basic_string<char>][m[K’
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:76:71:[m[K   required from here
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:60:15:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, void>[m[K’
+/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h: In instantiation of ‘[01m[Kvoid BT::BehaviorTreeFactory::registerNodeType(const string&) [with T = bt_behavior::SoundFeedback; std::string = std::__cxx11::basic_string<char>][m[K’:
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:76:71:[m[K   required from here
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:70:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> BT::NodeBuilder BT::CreateBuilder(typename std::enable_if<(std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::value && (! std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfiguration&>::value))>::type*)[m[K’
+   70 |   NodeBuilder [01;36m[KCreateBuilder[m[K(typename std::enable_if<has_default_constructor<T>::value &&
+      |               [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:70:15:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h: In substitution of ‘[01m[Ktemplate<class T> BT::NodeBuilder BT::CreateBuilder(typename std::enable_if<(std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::value && (! std::is_constructible<T, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfiguration&>::value))>::type*) [with T = bt_behavior::SoundFeedback][m[K’:
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:323:65:[m[K   required from ‘[01m[Kvoid BT::BehaviorTreeFactory::registerNodeType(const string&) [with T = bt_behavior::SoundFeedback; std::string = std::__cxx11::basic_string<char>][m[K’
+[01m[K/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/SoundFeedback.cpp:76:71:[m[K   required from here
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:70:15:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, void>[m[K’
+make[2]: *** [CMakeFiles/br2_sound_feedback_bt_node.dir/build.make:63: CMakeFiles/br2_sound_feedback_bt_node.dir/src/bt_behavior/SoundFeedback.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:235: CMakeFiles/br2_sound_feedback_bt_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -20,6 +20,7 @@
   <depend>libzmq3-dev</depend>
   <depend>ament_index_cpp</depend>
   <depend>kobuki_ros_interfaces</depend>
+  <depend>std_msgs</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

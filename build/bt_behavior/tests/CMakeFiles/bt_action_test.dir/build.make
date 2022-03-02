@@ -147,11 +147,6 @@ tests/bt_action_test: /opt/ros/foxy/lib/libaction_msgs__rosidl_generator_c.so
 tests/bt_action_test: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_c.so
 tests/bt_action_test: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_introspection_cpp.so
 tests/bt_action_test: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_cpp.so
-tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_c.so
-tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_generator_c.so
-tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_c.so
-tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so
-tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so
 tests/bt_action_test: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
 tests/bt_action_test: /opt/ros/foxy/lib/libstd_msgs__rosidl_generator_c.so
 tests/bt_action_test: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_c.so
@@ -161,9 +156,14 @@ tests/bt_action_test: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesuppor
 tests/bt_action_test: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_generator_c.so
 tests/bt_action_test: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
 tests/bt_action_test: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so
+tests/bt_action_test: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
+tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_c.so
+tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_generator_c.so
+tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_c.so
+tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so
 tests/bt_action_test: /opt/ros/foxy/lib/librosidl_typesupport_introspection_cpp.so
 tests/bt_action_test: /opt/ros/foxy/lib/librosidl_typesupport_introspection_c.so
-tests/bt_action_test: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
+tests/bt_action_test: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so
 tests/bt_action_test: /opt/ros/foxy/lib/librosidl_typesupport_cpp.so
 tests/bt_action_test: /opt/ros/foxy/lib/librosidl_typesupport_c.so
 tests/bt_action_test: /opt/ros/foxy/lib/librcpputils.so

@@ -146,11 +146,6 @@ patrolling_main: /opt/ros/foxy/lib/libaction_msgs__rosidl_generator_c.so
 patrolling_main: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_c.so
 patrolling_main: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_introspection_cpp.so
 patrolling_main: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_cpp.so
-patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_c.so
-patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_generator_c.so
-patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_c.so
-patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so
-patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so
 patrolling_main: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
 patrolling_main: /opt/ros/foxy/lib/libstd_msgs__rosidl_generator_c.so
 patrolling_main: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_c.so
@@ -160,9 +155,14 @@ patrolling_main: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_int
 patrolling_main: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_generator_c.so
 patrolling_main: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
 patrolling_main: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so
+patrolling_main: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
+patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_c.so
+patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_generator_c.so
+patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_c.so
+patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so
 patrolling_main: /opt/ros/foxy/lib/librosidl_typesupport_introspection_cpp.so
 patrolling_main: /opt/ros/foxy/lib/librosidl_typesupport_introspection_c.so
-patrolling_main: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
+patrolling_main: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so
 patrolling_main: /opt/ros/foxy/lib/librosidl_typesupport_cpp.so
 patrolling_main: /opt/ros/foxy/lib/librosidl_typesupport_c.so
 patrolling_main: /opt/ros/foxy/lib/librcpputils.so

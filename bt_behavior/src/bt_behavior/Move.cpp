@@ -25,6 +25,9 @@
 
 #include "behaviortree_cpp_v3/behavior_tree.h"
 
+#define ERROR_SOUND_NUM 5
+#define SUCCESS_SOUND_NUM 6
+
 namespace bt_behavior
 {
 
@@ -54,7 +57,7 @@ Move::on_success()
   RCLCPP_INFO(node_->get_logger(), "navigation Suceeded");
 
   auto message = kobuki_ros_interfaces::msg::Sound();
-  message.value = 0;
+  message.value = SUCCESS_SOUND_NUM;
   sound_publisher_->publish(message);
 
   return BT::NodeStatus::SUCCESS;
@@ -65,7 +68,7 @@ BT::NodeStatus Move::on_aborted()
   RCLCPP_INFO(node_->get_logger(), "navigation Aborted");
 
   auto message = kobuki_ros_interfaces::msg::Sound();
-  message.value = 1;
+  message.value = ERROR_SOUND_NUM;
   sound_publisher_->publish(message);
 
   return BT::NodeStatus::FAILURE;
@@ -76,7 +79,7 @@ BT::NodeStatus Move::on_cancelled()
   RCLCPP_INFO(node_->get_logger(), "navigation Cancelled");
 
   auto message = kobuki_ros_interfaces::msg::Sound();
-  message.value = 1;
+  message.value = ERROR_SOUND_NUM;
   sound_publisher_->publish(message);
 
   return BT::NodeStatus::FAILURE;

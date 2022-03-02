@@ -27,6 +27,8 @@
 
 #define ERROR_SOUND_NUM 5
 #define SUCCESS_SOUND_NUM 6
+#define GREEN_LED_VAL 1
+#define RED_LED_VAL 3
 
 namespace bt_behavior
 {
@@ -41,6 +43,8 @@ Move::Move(
   config().blackboard->get("node", sound_node_);
   sound_publisher_ = sound_node_->create_publisher<kobuki_ros_interfaces::msg::Sound>(
     "/commands/sound", 10);
+  led_publisher_ = sound_node_->create_publisher<kobuki_ros_interfaces::msg::Led>(
+    "/commands/led2", 10);
 }
 
 void
@@ -56,9 +60,12 @@ Move::on_success()
 {
   RCLCPP_INFO(node_->get_logger(), "navigation Suceeded");
 
-  auto message = kobuki_ros_interfaces::msg::Sound();
-  message.value = SUCCESS_SOUND_NUM;
-  sound_publisher_->publish(message);
+  auto sound_message = kobuki_ros_interfaces::msg::Sound();
+  sound_message.value = SUCCESS_SOUND_NUM;
+  sound_publisher_->publish(sound_message);
+  auto led_message = kobuki_ros_interfaces::msg::Led();
+  led_message.value = GREEN_LED_VAL;
+  led_publisher_->publish(led_message);
 
   return BT::NodeStatus::SUCCESS;
 }
@@ -67,20 +74,24 @@ BT::NodeStatus Move::on_aborted()
 {
   RCLCPP_INFO(node_->get_logger(), "navigation Aborted");
 
-  auto message = kobuki_ros_interfaces::msg::Sound();
-  message.value = ERROR_SOUND_NUM;
-  sound_publisher_->publish(message);
+  auto sound_message = kobuki_ros_interfaces::msg::Sound();
+  sound_message.value = ERROR_SOUND_NUM;
+  sound_publisher_->publish(sound_message);
+  auto led_message = kobuki_ros_interfaces::msg::Led();
+  led_message.value = RED_LED_VAL;
+  led_publisher_->publish(led_message);
 
   return BT::NodeStatus::FAILURE;
 }
 
 BT::NodeStatus Move::on_cancelled()
 {
-  RCLCPP_INFO(node_->get_logger(), "navigation Cancelled");
-
-  auto message = kobuki_ros_interfaces::msg::Sound();
-  message.value = ERROR_SOUND_NUM;
-  sound_publisher_->publish(message);
+  auto sound_message = kobuki_ros_interfaces::msg::Sound();
+  sound_message.value = ERROR_SOUND_NUM;
+  sound_publisher_->publish(sound_message);
+  auto led_message = kobuki_ros_interfaces::msg::Led();
+  led_message.value = RED_LED_VAL;
+  led_publisher_->publish(led_message);
 
   return BT::NodeStatus::FAILURE;
 }

@@ -11,10 +11,10 @@
                     </ForceSuccess>
                 <!--/BlackboardCheckInt-->
                 <Action ID="SoundFeedback" status="{st}"/>
-                <!--Action ID="LedFeedback" status="{st}"/>
+                <Action ID="LedFeedback" status="{st}"/>
                 <Delay delay_msec="400">
                     <Action ID="LedFeedback" status="{st}"/>
-                </Delay-->
+                </Delay>
             </Sequence>
         </KeepRunningUntilFailure>
     </BehaviorTree>
@@ -24,9 +24,9 @@
             <output_port name="waypoint"/>
             <output_port name="status"/>
         </Action>
-        <!--Action ID="LedFeedback">
+        <Action ID="LedFeedback">
             <output_port name="status"/>
-        </Action-->
+        </Action>
         <Action ID="Move">
             <input_port name="goal"/>
         </Action>

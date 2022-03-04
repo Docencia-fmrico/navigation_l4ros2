@@ -25,13 +25,13 @@
             <output_port name="status"/>
         </Action>
         <Action ID="LedFeedback">
-            <output_port name="status"/>
+            <input_port name="status"/>
         </Action>
         <Action ID="Move">
             <input_port name="goal"/>
         </Action>
         <Action ID="SoundFeedback">
-            <output_port name="status"/>
+            <input_port name="status"/>
         </Action>
     </TreeNodesModel>
     <!-- ////////// -->

@@ -50,7 +50,7 @@ public:
 private:
   std::shared_ptr<rclcpp::Node> led_node_;
   rclcpp::Publisher<kobuki_ros_interfaces::msg::Led>::SharedPtr led_publisher_;
-  bool on_off_;
+  static bool on_off_ = true;
 };
 
 }  // namespace bt_behavior

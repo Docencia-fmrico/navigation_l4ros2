@@ -39,9 +39,6 @@ LedFeedback::LedFeedback(
   config().blackboard->get("node", led_node_);
   led_publisher_ = led_node_->create_publisher<kobuki_ros_interfaces::msg::Led>(
     "/commands/led", 10);
-  on_off_ = true;
-  
-  
 }
 
 BT::NodeStatus

@@ -36,13 +36,14 @@ Move::Move(
   const BT::NodeConfiguration & conf)
 : bt_behavior::BtActionNode<nav2_msgs::action::NavigateToPose>(xml_tag_name, action_name,
     conf)
-{
-  //config().blackboard->get("node", sound_node_);
+{ 
+  RCLCPP_INFO(node_->get_logger(), "[MOVE] Init Move\n");
 }
 
 void
 Move::on_tick()
 {
+  RCLCPP_INFO(node_->get_logger(), "[MOVE] Ticked Move\n");
   geometry_msgs::msg::PoseStamped goal;
   getInput("goal", goal);
   goal_.pose = goal;

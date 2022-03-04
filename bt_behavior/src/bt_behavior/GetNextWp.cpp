@@ -21,6 +21,8 @@
 
 #include "behaviortree_cpp_v3/behavior_tree.h"
 
+#include "std_msgs/msg/bool.hpp"
+
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_costmap_2d/costmap_2d_ros.hpp"
 #include "nav2_costmap_2d/costmap_subscriber.hpp"
@@ -109,15 +111,20 @@ GetNextWp::tick()
   std::vector<double> coords = node_->get_parameter(wp_str.c_str()).as_double_array();
 
   
+  std_msgs::msg::Bool status;
 
   if(! coordsInMap(coords.at(0), coords.at(1))){
     // the coords is out of the map
     //put the ouput port the state = 0
-
     RCLCPP_INFO(node_->get_logger(), "The coords %.2f,%.2f are not a free space\n", coords.at(0), coords.at(1));
+    status.data = false;
+    setOutput("status", status);
 
-    return BT::NodeStatus::SUCCESS; 
+    return BT::NodeStatus::SUCCESS;
   }
+
+  status.data = true;
+  setOutput("status", status);
 
 
   RCLCPP_INFO(

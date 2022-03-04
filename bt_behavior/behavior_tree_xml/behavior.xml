@@ -4,10 +4,10 @@
     <BehaviorTree ID="BehaviorTree">
         <KeepRunningUntilFailure>
             <Sequence>
-                <Action ID="GetNextWp" waypoint="{wp}"/>
+                <Action ID="GetNextWp" waypoint="{wp}" status="{st}"/>
                 <!--BlackboardCheckInt return_on_mismatch="" value_A="" value_B=""-->
                     <ForceSuccess>
-                        <Action ID="Move" goal="{wp}" status="{st}"/>
+                        <Action ID="Move" goal="{wp}"/>
                     </ForceSuccess>
                 <!--/BlackboardCheckInt-->
                 <Action ID="SoundFeedback" status="{st}"/>

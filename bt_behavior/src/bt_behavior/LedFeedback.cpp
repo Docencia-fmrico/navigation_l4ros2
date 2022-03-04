@@ -48,10 +48,10 @@ LedFeedback::tick()
   getInput("status", state);
 
   auto led_message = kobuki_ros_interfaces::msg::Led();
-  if (on_off_) {
+  if (!on_off_) {
     if (state.data){
         led_message.value = GREEN_LED_VAL;
-    }else{
+    } else {
         led_message.value = RED_LED_VAL;  
     }
   } else {

@@ -1,9 +1,0 @@
-[35m[1mScanning dependencies of target br2_sound_feedback_bt_node[0m
-[ 12%] Built target gtest
-[ 25%] Built target gtest_main
-[ 37%] Built target br2_move_bt_node
-[ 50%] Built target patrolling_main
-[ 62%] Built target br2_patrol_bt_node
-[ 75%] Built target br2_get_waypoint_bt_node
-[ 81%] [32mBuilding CXX object CMakeFiles/br2_sound_feedback_bt_node.dir/src/bt_behavior/SoundFeedback.cpp.o[0m
-[ 93%] Built target bt_action_test

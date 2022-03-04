@@ -44,7 +44,7 @@ GetNextWp::GetNextWp(
   
 
   config().blackboard->get("node", node_);
-  costmap_sub_ = node_->create_subscription<nav_msgs::msg::OccupancyGrid> ("/global_costmap/costmap", rclcpp::QoS(1).transient_local(), std::bind(&GetNextWp::mapCallback, this, _1));
+  costmap_sub_ = node_->create_subscription<nav_msgs::msg::OccupancyGrid> ("/map", rclcpp::QoS(5).transient_local().reliable(), std::bind(&GetNextWp::mapCallback, this, _1));
   node_->declare_parameter("waypoints");
   wp_names_ = node_->get_parameter("waypoints").as_string_array();
 

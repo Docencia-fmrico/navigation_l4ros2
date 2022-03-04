@@ -5,9 +5,9 @@
         <KeepRunningUntilFailure>
             <Sequence>
                 <Action ID="GetNextWp" waypoint="{wp}"/>
-                <ForceSuccess>
+                <!--ForceSuccess>
                     <Action ID="Move" goal="{wp}"/>
-                </ForceSuccess>
+                </ForceSuccess-->
             </Sequence>
         </KeepRunningUntilFailure>
     </BehaviorTree>

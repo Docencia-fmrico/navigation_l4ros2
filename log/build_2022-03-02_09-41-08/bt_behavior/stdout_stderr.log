@@ -1,0 +1,46 @@
+[35m[1mScanning dependencies of target br2_move_bt_node[0m
+[ 14%] Built target gtest_main
+[ 28%] Built target gtest
+[ 42%] Built target br2_patrol_bt_node
+[ 57%] Built target patrolling_main
+[ 71%] Built target br2_get_waypoint_bt_node
+[35m[1mScanning dependencies of target bt_action_test[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/br2_move_bt_node.dir/src/bt_behavior/Move.cpp.o[0m
+[ 85%] [32mBuilding CXX object tests/CMakeFiles/bt_action_test.dir/bt_action_test.cpp.o[0m
+[ 92%] [32m[1mLinking CXX shared library libbr2_move_bt_node.so[0m
+[ 92%] Built target br2_move_bt_node
+[100%] [32m[1mLinking CXX executable bt_action_test[0m
+[100%] Built target bt_action_test
+-- Install configuration: "Debug"
+-- Execute custom install script
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/lib/libbr2_get_waypoint_bt_node.so
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/lib/libbr2_patrol_bt_node.so
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/lib/libbr2_move_bt_node.so
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/lib/bt_behavior/patrolling_main
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/GetNextWp.hpp
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/Move.hpp
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/Patrol.hpp
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/ctrl_support/BTActionNode.hpp
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/ctrl_support/BTLifecycleCtrlNode.hpp
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/behavior_tree_xml/behavior.xml
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/launch/kobuki_patrolling.launch.py
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/launch/patrolling.launch.py
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/config/arena_waypoints.yaml
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/config/waypoints.yaml
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/ament_index/resource_index/package_run_dependencies/bt_behavior
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/ament_index/resource_index/parent_prefix_path/bt_behavior
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/environment/ament_prefix_path.sh
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/environment/ament_prefix_path.dsv
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/environment/path.sh
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/environment/path.dsv
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/local_setup.bash
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/local_setup.sh
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/local_setup.zsh
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/local_setup.dsv
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/package.dsv
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/ament_index/resource_index/packages/bt_behavior
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/cmake/bt_behaviorConfig.cmake
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/cmake/bt_behaviorConfig-version.cmake
+-- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/package.xml

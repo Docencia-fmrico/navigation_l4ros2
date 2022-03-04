@@ -1,0 +1,50 @@
+[0.029s] Invoking command in '/home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/usanz/colcon_ws/install/ros2controlcli:/home/usanz/colcon_ws/install/launch_pal:/home/usanz/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --build /home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior -- -j8 -l8
+[0.134s] [35m[1mScanning dependencies of target br2_move_bt_node[0m
+[0.151s] [ 14%] Built target gtest_main
+[0.162s] [ 28%] Built target gtest
+[0.174s] [ 42%] Built target br2_patrol_bt_node
+[0.185s] [ 57%] Built target patrolling_main
+[0.190s] [ 71%] Built target br2_get_waypoint_bt_node
+[0.190s] [35m[1mScanning dependencies of target bt_action_test[0m
+[0.209s] [ 78%] [32mBuilding CXX object CMakeFiles/br2_move_bt_node.dir/src/bt_behavior/Move.cpp.o[0m
+[0.295s] [ 85%] [32mBuilding CXX object tests/CMakeFiles/bt_action_test.dir/bt_action_test.cpp.o[0m
+[9.253s] [ 92%] [32m[1mLinking CXX shared library libbr2_move_bt_node.so[0m
+[9.735s] [ 92%] Built target br2_move_bt_node
+[11.906s] [100%] [32m[1mLinking CXX executable bt_action_test[0m
+[12.506s] [100%] Built target bt_action_test
+[12.524s] Invoked command in '/home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/usanz/colcon_ws/install/ros2controlcli:/home/usanz/colcon_ws/install/launch_pal:/home/usanz/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --build /home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior -- -j8 -l8
+[12.626s] Invoking command in '/home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/usanz/colcon_ws/install/ros2controlcli:/home/usanz/colcon_ws/install/launch_pal:/home/usanz/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --install /home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior
+[12.643s] -- Install configuration: "Debug"
+[12.644s] -- Execute custom install script
+[12.645s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/lib/libbr2_get_waypoint_bt_node.so
+[12.658s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/lib/libbr2_patrol_bt_node.so
+[12.670s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/lib/libbr2_move_bt_node.so
+[12.682s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/lib/bt_behavior/patrolling_main
+[12.698s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/GetNextWp.hpp
+[12.714s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/Move.hpp
+[12.729s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/Patrol.hpp
+[12.745s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/ctrl_support/BTActionNode.hpp
+[12.760s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/include//bt_behavior/ctrl_support/BTLifecycleCtrlNode.hpp
+[12.775s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/behavior_tree_xml/behavior.xml
+[12.789s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/launch/kobuki_patrolling.launch.py
+[12.802s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/launch/patrolling.launch.py
+[12.816s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/config/arena_waypoints.yaml
+[12.829s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/config/waypoints.yaml
+[12.843s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/ament_index/resource_index/package_run_dependencies/bt_behavior
+[12.859s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/ament_index/resource_index/parent_prefix_path/bt_behavior
+[12.880s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/environment/ament_prefix_path.sh
+[12.899s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/environment/ament_prefix_path.dsv
+[12.917s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/environment/path.sh
+[12.934s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/environment/path.dsv
+[12.949s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/local_setup.bash
+[12.962s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/local_setup.sh
+[12.979s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/local_setup.zsh
+[12.996s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/local_setup.dsv
+[13.013s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/package.dsv
+[13.026s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/ament_index/resource_index/packages/bt_behavior
+[13.042s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/cmake/ament_cmake_export_include_directories-extras.cmake
+[13.056s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/cmake/ament_cmake_export_dependencies-extras.cmake
+[13.071s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/cmake/bt_behaviorConfig.cmake
+[13.086s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/cmake/bt_behaviorConfig-version.cmake
+[13.101s] -- Symlinking: /home/usanz/colcon_ws/src/navigation_l4ros2/install/bt_behavior/share/bt_behavior/package.xml
+[13.120s] Invoked command in '/home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/usanz/colcon_ws/install/ros2controlcli:/home/usanz/colcon_ws/install/launch_pal:/home/usanz/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --install /home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior

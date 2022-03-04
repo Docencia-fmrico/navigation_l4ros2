@@ -45,6 +45,8 @@ public:
 
   BT::NodeStatus on_aborted() override;
   BT::NodeStatus on_cancelled() override;
+  // BT::NodeStatus abort();
+
   static BT::PortsList providedPorts()
   {
     return {

@@ -15,6 +15,8 @@ find_package(action_msgs REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(nav2_costmap_2d REQUIRED)
 find_package(kobuki_ros_interfaces REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 
@@ -37,6 +39,8 @@ set(dependencies
     lifecycle_msgs
     geometry_msgs
     nav2_msgs
+    nav_msgs
+    nav2_costmap_2d
     kobuki_ros_interfaces
     ament_index_cpp
 )

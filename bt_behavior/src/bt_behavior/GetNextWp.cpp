@@ -17,12 +17,19 @@
 #include <vector>
 
 #include "bt_behavior/GetNextWp.hpp"
+#include "bt_behavior/MyCostmap.hpp"
 
 #include "behaviortree_cpp_v3/behavior_tree.h"
 
 #include "geometry_msgs/msg/pose_stamped.hpp"
+#include "nav2_costmap_2d/costmap_2d_ros.hpp"
+#include "nav2_costmap_2d/costmap_subscriber.hpp"
+#include "nav_msgs/msg/occupancy_grid.hpp"
+
 
 #include "rclcpp/rclcpp.hpp"
+
+using std::placeholders::_1;
 
 namespace bt_behavior
 {
@@ -34,13 +41,35 @@ GetNextWp::GetNextWp(
   const BT::NodeConfiguration & conf)
 : BT::ActionNodeBase(xml_tag_name, conf)
 {
+  
+
   config().blackboard->get("node", node_);
+  costmap_sub_ = node_->create_subscription<nav_msgs::msg::OccupancyGrid> ("/global_costmap/costmap", rclcpp::QoS(1).transient_local(), std::bind(&GetNextWp::mapCallback, this, _1));
   node_->declare_parameter("waypoints");
   wp_names_ = node_->get_parameter("waypoints").as_string_array();
 
   RCLCPP_INFO(
     node_->get_logger(), "GETNEXTWP init\n");
 }
+
+void
+GetNextWp::mapCallback(const nav_msgs::msg::OccupancyGrid::SharedPtr msg){
+  map_msg_ = msg;
+}
+
+
+bool
+GetNextWp::coordsInMap(double x, double y){
+
+  MyCostmap costmap(*map_msg_);
+
+  unsigned int i,j;
+  
+  costmap.worldToMap(x, y, i, j);
+
+  return costmap.getCost(i, j) == FREE_SPACE; // check if the point to go is completely free
+}
+
 
 void
 GetNextWp::halt()
@@ -66,6 +95,16 @@ GetNextWp::tick()
   node_->declare_parameter(wp_str.c_str());
   geometry_msgs::msg::PoseStamped wp;
   std::vector<double> coords = node_->get_parameter(wp_str.c_str()).as_double_array();
+
+  if(! coordsInMap(coords.at(0), coords.at(1))){
+    // the coords is out of the map
+    //put the ouput port the state = 0
+
+    RCLCPP_INFO(node_->get_logger(), "The coords %.2f,%.2f are not a free space\n", coords.at(0), coords.at(1));
+
+    return BT::NodeStatus::SUCCESS; 
+  }
+
 
   RCLCPP_INFO(
     node_->get_logger(), "x: %.2f, y: %.2f", coords.at(0), coords.at(1));

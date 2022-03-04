@@ -51,25 +51,7 @@ int main(int argc, char * argv[])
 
   bool finish = false;
   while (!finish && rclcpp::ok()) {
-    //finish = tree.rootNode()->executeTick() == BT::NodeStatus::FAILURE;
-
-    switch (tree.rootNode()->executeTick()){
-      case BT::NodeStatus::FAILURE:
-        finish = true;
-        RCLCPP_INFO(node->get_logger(), "[PATROLLING MAIN] Devuelve FAILURE\n");
-        break;
-      case BT::NodeStatus::SUCCESS:
-        RCLCPP_INFO(node->get_logger(), "[PATROLLING MAIN] Devuelve SUCCESS\n");
-        break;
-      case BT::NodeStatus::RUNNING:
-        RCLCPP_INFO(node->get_logger(), "[PATROLLING MAIN] Devuelve RUNNING\n");
-        break;
-      default:
-        RCLCPP_INFO(node->get_logger(), "[PATROLLING MAIN] Not recognized\n");
-        break;
-
-
-    }
+    finish = tree.rootNode()->executeTick() == BT::NodeStatus::FAILURE;
 
     rclcpp::spin_some(node);
     rate.sleep();

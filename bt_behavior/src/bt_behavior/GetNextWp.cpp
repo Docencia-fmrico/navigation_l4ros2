@@ -63,6 +63,10 @@ GetNextWp::coordsInMap(double x, double y){
 
   MyCostmap costmap(*map_msg_);
 
+  if (fabs(costmap.getSizeInMetersX()) < fabs(x) || fabs(costmap.getSizeInMetersY()) < fabs(y)){
+    // the coords are out of the max size of the map
+    return false;
+  }
   unsigned int i,j;
   
   costmap.worldToMap(x, y, i, j);

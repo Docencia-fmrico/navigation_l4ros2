@@ -10,6 +10,7 @@
 #include "nav2_costmap_2d/costmap_2d_ros.hpp"
 #include "nav2_costmap_2d/costmap_subscriber.hpp"
 #include "nav_msgs/msg/occupancy_grid.hpp"
+#include "std_msgs/msg/bool.hpp"
 
 #include "bt_behavior/ctrl_support/BTActionNode.hpp"
 #include "behaviortree_cpp_v3/behavior_tree.h"
@@ -30,7 +31,8 @@ public:
   static BT::PortsList providedPorts()
   {
     return {
-      BT::OutputPort<geometry_msgs::msg::PoseStamped>("waypoint")
+      BT::OutputPort<geometry_msgs::msg::PoseStamped>("waypoint"),
+      BT::OutputPort<std_msgs::msg::Bool>("status")
     };
   }
   void mapCallback(const nav_msgs::msg::OccupancyGrid::SharedPtr msg);

@@ -79,7 +79,15 @@ GetNextWp::halt()
 
 BT::NodeStatus
 GetNextWp::tick()
-{
+{ 
+  RCLCPP_INFO(node_->get_logger(), "Entered tick GETNEXTWP\n");
+
+  if(map_msg_ == nullptr){
+    RCLCPP_INFO(node_->get_logger(), "[GETNEXTWP] Map not recevived yet. Returning RUNNING\n");
+
+    return BT::NodeStatus::RUNNING;
+  }
+
   if (wp_names_.empty()) {
     RCLCPP_INFO(
       node_->get_logger(), "GETNEXTWP: All waypoints sent. Returning FAILURE");
@@ -95,6 +103,8 @@ GetNextWp::tick()
   node_->declare_parameter(wp_str.c_str());
   geometry_msgs::msg::PoseStamped wp;
   std::vector<double> coords = node_->get_parameter(wp_str.c_str()).as_double_array();
+
+  
 
   if(! coordsInMap(coords.at(0), coords.at(1))){
     // the coords is out of the map

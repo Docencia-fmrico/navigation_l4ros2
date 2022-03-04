@@ -70,17 +70,31 @@ CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/GetNextWp.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/GetNextWp.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/GetNextWp.cpp -o CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/GetNextWp.cpp.s
 
+CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.o: CMakeFiles/br2_get_waypoint_bt_node.dir/flags.make
+CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.o: /home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/MyCostmap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.o -c /home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/MyCostmap.cpp
+
+CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/MyCostmap.cpp > CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.i
+
+CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/src/bt_behavior/MyCostmap.cpp -o CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.s
+
 # Object files for target br2_get_waypoint_bt_node
 br2_get_waypoint_bt_node_OBJECTS = \
-"CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/GetNextWp.cpp.o"
+"CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/GetNextWp.cpp.o" \
+"CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.o"
 
 # External object files for target br2_get_waypoint_bt_node
 br2_get_waypoint_bt_node_EXTERNAL_OBJECTS =
 
 libbr2_get_waypoint_bt_node.so: CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/GetNextWp.cpp.o
+libbr2_get_waypoint_bt_node.so: CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.o
 libbr2_get_waypoint_bt_node.so: CMakeFiles/br2_get_waypoint_bt_node.dir/build.make
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librclcpp_lifecycle.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librclcpp_action.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_typesupport_introspection_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_typesupport_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_typesupport_introspection_cpp.so
@@ -89,14 +103,135 @@ libbr2_get_waypoint_bt_node.so: /home/usanz/colcon_ws/install/kobuki_ros_interfa
 libbr2_get_waypoint_bt_node.so: /home/usanz/colcon_ws/install/kobuki_ros_interfaces/lib/libkobuki_ros_interfaces__rosidl_typesupport_c.so
 libbr2_get_waypoint_bt_node.so: /home/usanz/colcon_ws/install/kobuki_ros_interfaces/lib/libkobuki_ros_interfaces__rosidl_typesupport_introspection_cpp.so
 libbr2_get_waypoint_bt_node.so: /home/usanz/colcon_ws/install/kobuki_ros_interfaces/lib/libkobuki_ros_interfaces__rosidl_typesupport_cpp.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libament_index_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbehaviortree_cpp_v3.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_lifecycle.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblayers.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_costmap_2d_core.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_costmap_2d_client.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblaser_geometry.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libmap_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libmap_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libmap_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libmap_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libmap_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libmap_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libmessage_filters.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_util_core.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomponent_manager.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liborocos-kdl.so.1.4.0
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_typesupport_introspection_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_typesupport_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_typesupport_introspection_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librclcpp_action.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtest_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtest_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtest_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtest_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtest_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtest_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libvoxel_grid.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libament_index_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libclass_loader.so
+libbr2_get_waypoint_bt_node.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librclcpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librclcpp_lifecycle.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_lifecycle.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liborocos-kdl.so.1.4.0
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstatic_transform_broadcaster_node.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtf2.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtf2_ros.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstatic_transform_broadcaster_node.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtf2_ros.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomponent_manager.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcutils.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcpputils.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_runtime_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblifecycle_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /home/usanz/colcon_ws/install/kobuki_ros_interfaces/lib/libkobuki_ros_interfaces__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librclcpp_action.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_action.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libmessage_filters.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtf2.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librclcpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblibstatistics_collector.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_introspection_c.so
@@ -104,6 +239,13 @@ libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblibstatistics_collector_tes
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_introspection_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librmw_implementation.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librmw.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_logging_spdlog.so
+libbr2_get_waypoint_bt_node.so: /usr/lib/x86_64-linux-gnu/libspdlog.so.1.5.0
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_yaml_param_parser.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libyaml.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosgraph_msgs__rosidl_typesupport_introspection_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosgraph_msgs__rosidl_generator_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosgraph_msgs__rosidl_typesupport_c.so
@@ -114,37 +256,36 @@ libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_gen
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_introspection_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_cpp.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_action.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_yaml_param_parser.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libyaml.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtracetools.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libament_index_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_introspection_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_generator_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_cpp.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librmw_implementation.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcl_logging_spdlog.so
-libbr2_get_waypoint_bt_node.so: /usr/lib/x86_64-linux-gnu/libspdlog.so.1.5.0
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librmw.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav2_msgs__rosidl_generator_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_introspection_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_generator_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_cpp.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_generator_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
-libbr2_get_waypoint_bt_node.so: /home/usanz/colcon_ws/install/kobuki_ros_interfaces/lib/libkobuki_ros_interfaces__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libclass_loader.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_generator_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_introspection_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_generator_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_introspection_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_generator_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_c.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_generator_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_c.so
@@ -154,21 +295,16 @@ libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_generator_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_generator_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_typesupport_introspection_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_typesupport_introspection_c.so
-libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so
+libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_typesupport_cpp.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_typesupport_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcpputils.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librosidl_runtime_c.so
 libbr2_get_waypoint_bt_node.so: /opt/ros/foxy/lib/librcutils.so
 libbr2_get_waypoint_bt_node.so: CMakeFiles/br2_get_waypoint_bt_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libbr2_get_waypoint_bt_node.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usanz/colcon_ws/src/navigation_l4ros2/build/bt_behavior/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libbr2_get_waypoint_bt_node.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/br2_get_waypoint_bt_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

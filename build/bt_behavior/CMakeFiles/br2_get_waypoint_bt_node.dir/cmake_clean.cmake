@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/GetNextWp.cpp.o"
+  "CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.o"
   "libbr2_get_waypoint_bt_node.pdb"
   "libbr2_get_waypoint_bt_node.so"
 )

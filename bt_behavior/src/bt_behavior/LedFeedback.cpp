@@ -63,6 +63,12 @@ LedFeedback::tick()
   return BT::NodeStatus::SUCCESS;
 }
 
+void
+LedFeedback::halt()
+{
+  std::cout << "LedFeedback halt" << std::endl;
+}
+
 }  // namespace bt_behavior
 
 #include "behaviortree_cpp_v3/bt_factory.h"

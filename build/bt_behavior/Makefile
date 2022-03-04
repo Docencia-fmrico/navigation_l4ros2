@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -122,18 +134,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -207,6 +207,19 @@ br2_move_bt_node/fast:
 .PHONY : br2_move_bt_node/fast
 
 #=============================================================================
+# Target rules for targets named br2_sound_feedback_bt_node
+
+# Build rule for target.
+br2_sound_feedback_bt_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 br2_sound_feedback_bt_node
+.PHONY : br2_sound_feedback_bt_node
+
+# fast build rule for target.
+br2_sound_feedback_bt_node/fast:
+	$(MAKE) -f CMakeFiles/br2_sound_feedback_bt_node.dir/build.make CMakeFiles/br2_sound_feedback_bt_node.dir/build
+.PHONY : br2_sound_feedback_bt_node/fast
+
+#=============================================================================
 # Target rules for targets named br2_get_waypoint_bt_node
 
 # Build rule for target.
@@ -220,17 +233,17 @@ br2_get_waypoint_bt_node/fast:
 .PHONY : br2_get_waypoint_bt_node/fast
 
 #=============================================================================
-# Target rules for targets named br2_sound_feedback_bt_node
+# Target rules for targets named br2_led_feedback_bt_node
 
 # Build rule for target.
-br2_sound_feedback_bt_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 br2_sound_feedback_bt_node
-.PHONY : br2_sound_feedback_bt_node
+br2_led_feedback_bt_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 br2_led_feedback_bt_node
+.PHONY : br2_led_feedback_bt_node
 
 # fast build rule for target.
-br2_sound_feedback_bt_node/fast:
-	$(MAKE) -f CMakeFiles/br2_sound_feedback_bt_node.dir/build.make CMakeFiles/br2_sound_feedback_bt_node.dir/build
-.PHONY : br2_sound_feedback_bt_node/fast
+br2_led_feedback_bt_node/fast:
+	$(MAKE) -f CMakeFiles/br2_led_feedback_bt_node.dir/build.make CMakeFiles/br2_led_feedback_bt_node.dir/build
+.PHONY : br2_led_feedback_bt_node/fast
 
 #=============================================================================
 # Target rules for targets named uninstall
@@ -324,6 +337,33 @@ src/bt_behavior/GetNextWp.cpp.s:
 	$(MAKE) -f CMakeFiles/br2_get_waypoint_bt_node.dir/build.make CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/GetNextWp.cpp.s
 .PHONY : src/bt_behavior/GetNextWp.cpp.s
 
+src/bt_behavior/LedFeedback.o: src/bt_behavior/LedFeedback.cpp.o
+
+.PHONY : src/bt_behavior/LedFeedback.o
+
+# target to build an object file
+src/bt_behavior/LedFeedback.cpp.o:
+	$(MAKE) -f CMakeFiles/br2_led_feedback_bt_node.dir/build.make CMakeFiles/br2_led_feedback_bt_node.dir/src/bt_behavior/LedFeedback.cpp.o
+.PHONY : src/bt_behavior/LedFeedback.cpp.o
+
+src/bt_behavior/LedFeedback.i: src/bt_behavior/LedFeedback.cpp.i
+
+.PHONY : src/bt_behavior/LedFeedback.i
+
+# target to preprocess a source file
+src/bt_behavior/LedFeedback.cpp.i:
+	$(MAKE) -f CMakeFiles/br2_led_feedback_bt_node.dir/build.make CMakeFiles/br2_led_feedback_bt_node.dir/src/bt_behavior/LedFeedback.cpp.i
+.PHONY : src/bt_behavior/LedFeedback.cpp.i
+
+src/bt_behavior/LedFeedback.s: src/bt_behavior/LedFeedback.cpp.s
+
+.PHONY : src/bt_behavior/LedFeedback.s
+
+# target to generate assembly for a file
+src/bt_behavior/LedFeedback.cpp.s:
+	$(MAKE) -f CMakeFiles/br2_led_feedback_bt_node.dir/build.make CMakeFiles/br2_led_feedback_bt_node.dir/src/bt_behavior/LedFeedback.cpp.s
+.PHONY : src/bt_behavior/LedFeedback.cpp.s
+
 src/bt_behavior/Move.o: src/bt_behavior/Move.cpp.o
 
 .PHONY : src/bt_behavior/Move.o
@@ -350,6 +390,33 @@ src/bt_behavior/Move.s: src/bt_behavior/Move.cpp.s
 src/bt_behavior/Move.cpp.s:
 	$(MAKE) -f CMakeFiles/br2_move_bt_node.dir/build.make CMakeFiles/br2_move_bt_node.dir/src/bt_behavior/Move.cpp.s
 .PHONY : src/bt_behavior/Move.cpp.s
+
+src/bt_behavior/MyCostmap.o: src/bt_behavior/MyCostmap.cpp.o
+
+.PHONY : src/bt_behavior/MyCostmap.o
+
+# target to build an object file
+src/bt_behavior/MyCostmap.cpp.o:
+	$(MAKE) -f CMakeFiles/br2_get_waypoint_bt_node.dir/build.make CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.o
+.PHONY : src/bt_behavior/MyCostmap.cpp.o
+
+src/bt_behavior/MyCostmap.i: src/bt_behavior/MyCostmap.cpp.i
+
+.PHONY : src/bt_behavior/MyCostmap.i
+
+# target to preprocess a source file
+src/bt_behavior/MyCostmap.cpp.i:
+	$(MAKE) -f CMakeFiles/br2_get_waypoint_bt_node.dir/build.make CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.i
+.PHONY : src/bt_behavior/MyCostmap.cpp.i
+
+src/bt_behavior/MyCostmap.s: src/bt_behavior/MyCostmap.cpp.s
+
+.PHONY : src/bt_behavior/MyCostmap.s
+
+# target to generate assembly for a file
+src/bt_behavior/MyCostmap.cpp.s:
+	$(MAKE) -f CMakeFiles/br2_get_waypoint_bt_node.dir/build.make CMakeFiles/br2_get_waypoint_bt_node.dir/src/bt_behavior/MyCostmap.cpp.s
+.PHONY : src/bt_behavior/MyCostmap.cpp.s
 
 src/bt_behavior/Patrol.o: src/bt_behavior/Patrol.cpp.o
 
@@ -439,28 +506,35 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... bt_behavior_uninstall"
 	@echo "... patrolling_main"
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... br2_move_bt_node"
-	@echo "... br2_get_waypoint_bt_node"
 	@echo "... br2_sound_feedback_bt_node"
+	@echo "... br2_get_waypoint_bt_node"
+	@echo "... br2_led_feedback_bt_node"
 	@echo "... uninstall"
 	@echo "... test"
 	@echo "... br2_patrol_bt_node"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... install/local"
 	@echo "... bt_action_test"
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... src/bt_behavior/GetNextWp.o"
 	@echo "... src/bt_behavior/GetNextWp.i"
 	@echo "... src/bt_behavior/GetNextWp.s"
+	@echo "... src/bt_behavior/LedFeedback.o"
+	@echo "... src/bt_behavior/LedFeedback.i"
+	@echo "... src/bt_behavior/LedFeedback.s"
 	@echo "... src/bt_behavior/Move.o"
 	@echo "... src/bt_behavior/Move.i"
 	@echo "... src/bt_behavior/Move.s"
+	@echo "... src/bt_behavior/MyCostmap.o"
+	@echo "... src/bt_behavior/MyCostmap.i"
+	@echo "... src/bt_behavior/MyCostmap.s"
 	@echo "... src/bt_behavior/Patrol.o"
 	@echo "... src/bt_behavior/Patrol.i"
 	@echo "... src/bt_behavior/Patrol.s"

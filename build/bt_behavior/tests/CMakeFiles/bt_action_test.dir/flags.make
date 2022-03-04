@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -pthread -std=gnu++17
 
 CXX_DEFINES = -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB -DZMQ_FOUND
 
-CXX_INCLUDES = -I/opt/ros/foxy/src/gtest_vendor/include -I/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/include -isystem /home/usanz/colcon_ws/install/kobuki_ros_interfaces/include -isystem /opt/ros/foxy/include 
+CXX_INCLUDES = -I/opt/ros/foxy/src/gtest_vendor/include -I/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/include -isystem /home/usanz/colcon_ws/install/kobuki_ros_interfaces/include -isystem /opt/ros/foxy/include -isystem /usr/include/eigen3 
 

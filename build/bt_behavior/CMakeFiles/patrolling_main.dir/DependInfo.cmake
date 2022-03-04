@@ -21,6 +21,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/usanz/colcon_ws/src/navigation_l4ros2/bt_behavior/include"
   "/home/usanz/colcon_ws/install/kobuki_ros_interfaces/include"
   "/opt/ros/foxy/include"
+  "/usr/include/eigen3"
   )
 
 # Targets to which this target links.

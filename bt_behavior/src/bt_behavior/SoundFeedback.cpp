@@ -59,13 +59,13 @@ SoundFeedback::tick()
   }
   sound_publisher_->publish(sound_message);
 
-  /*
-  auto led_message = kobuki_ros_interfaces::msg::Led();
-  led_message.value = OFF_LED_VAL;
-  led_publisher_->publish(led_message);
-  */
-
   return BT::NodeStatus::SUCCESS;
+}
+
+void
+SoundFeedback::halt()
+{
+  std::cout << "SoundFeedback halt" << std::endl;
 }
 
 }  // namespace bt_behavior

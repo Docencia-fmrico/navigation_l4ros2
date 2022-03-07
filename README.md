@@ -24,3 +24,12 @@ Habrá dos rondas:
 
 - Ronda 1: Habrá 4 waypoints, y ninguno en la posición de un obstáculo.
 - Ronda 2: Habrá 3-7 waypoints, alguno de ellos en la posición de un obstáculo. En este caso, se podrá ir al siguiente en cuanto se detecte este caso.
+
+
+
+
+# Behavior Tree diagram 
+![scheme](./bt.png)
+
+
+The behavior tree is designed to perform the task of going to a specific number of waypoints located in the map using Nav2 for ROS 2. For this purpose we separated it into three main actions, the "GetNextWp" that gets the next waypoint coordinates from the params file and verifies that it can be reached, the "Move" action that passes those points to the Nav2 program and waits for the navigation result, and the "SoundFeedback" that publishes a different message on the sound topic depending on the navigation outcome. We also tried to implement a "LedFeedback" similar to the sound one but we ran into some linking problems and finally decided not to add it.

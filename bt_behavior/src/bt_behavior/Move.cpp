@@ -19,6 +19,8 @@
 
 #include "bt_behavior/Move.hpp"
 
+#include "std_msgs/msg/bool.hpp"
+
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 #include "kobuki_ros_interfaces/msg/sound.hpp"
@@ -60,14 +62,24 @@ Move::on_success()
 BT::NodeStatus Move::on_aborted()
 {
   RCLCPP_INFO(node_->get_logger(), "navigation Aborted");
-
+  
+  
+  std_msgs::msg::Bool status;
+  status.data = false;
+  setOutput("status", status);
+  
   return BT::NodeStatus::FAILURE;
 }
 
 BT::NodeStatus Move::on_cancelled()
 {
   RCLCPP_INFO(node_->get_logger(), "navigation Cancelled");
-
+  
+  
+  std_msgs::msg::Bool status;
+  status.data = false;
+  setOutput("status", status);
+  
   return BT::NodeStatus::FAILURE;
 }
 

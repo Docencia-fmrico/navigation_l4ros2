@@ -7,7 +7,7 @@
                 <Action ID="GetNextWp" waypoint="{wp}" status="{st}"/>
                 <!--BlackboardCheckInt return_on_mismatch="" value_A="" value_B=""-->
                     <ForceSuccess>
-                        <Action ID="Move" goal="{wp}"/>
+                        <Action ID="Move" goal="{wp}" status="{st}"/>
                     </ForceSuccess>
                 <!--/BlackboardCheckInt-->
                 <Action ID="SoundFeedback" status="{st}"/>
@@ -29,6 +29,7 @@
         </Action-->
         <Action ID="Move">
             <input_port name="goal"/>
+            <output_port name="status"/>
         </Action>
         <Action ID="SoundFeedback">
             <input_port name="status"/>

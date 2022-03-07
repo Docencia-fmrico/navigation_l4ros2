@@ -22,6 +22,7 @@
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 #include "kobuki_ros_interfaces/msg/sound.hpp"
 #include "kobuki_ros_interfaces/msg/led.hpp"
+#include "std_msgs/msg/bool.hpp"
 
 #include "bt_behavior/ctrl_support/BTActionNode.hpp"
 #include "behaviortree_cpp_v3/behavior_tree.h"
@@ -51,7 +52,8 @@ public:
   static BT::PortsList providedPorts()
   {
     return {
-      BT::InputPort<geometry_msgs::msg::PoseStamped>("goal")
+      BT::InputPort<geometry_msgs::msg::PoseStamped>("goal"),
+      BT::OutputPort<std_msgs::msg::Bool>("status")
     };
   }
 

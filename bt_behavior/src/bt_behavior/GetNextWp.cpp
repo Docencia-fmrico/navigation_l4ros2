@@ -122,13 +122,13 @@ GetNextWp::tick()
     RCLCPP_INFO(node_->get_logger(), "The coords %.2f,%.2f are not a free space\n", coords.at(0), coords.at(1));
     status.data = false;
     setOutput("status", status);
-
+    setOutput("status_int", 0);
     return BT::NodeStatus::SUCCESS;
   }
 
   status.data = true;
   setOutput("status", status);
-
+  setOutput("status_int", 1);
 
   RCLCPP_INFO(
     node_->get_logger(), "x: %.2f, y: %.2f", coords.at(0), coords.at(1));

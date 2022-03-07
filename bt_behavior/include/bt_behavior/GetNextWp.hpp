@@ -32,7 +32,8 @@ public:
   {
     return {
       BT::OutputPort<geometry_msgs::msg::PoseStamped>("waypoint"),
-      BT::OutputPort<std_msgs::msg::Bool>("status")
+      BT::OutputPort<std_msgs::msg::Bool>("status"),
+      BT::OutputPort<int>("status_int")
     };
   }
   void mapCallback(const nav_msgs::msg::OccupancyGrid::SharedPtr msg);

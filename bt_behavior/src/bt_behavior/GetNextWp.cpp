@@ -17,12 +17,23 @@
 #include <vector>
 
 #include "bt_behavior/GetNextWp.hpp"
+#include "bt_behavior/MyCostmap.hpp"
 
 #include "behaviortree_cpp_v3/behavior_tree.h"
 
+#include "std_msgs/msg/bool.hpp"
+
 #include "geometry_msgs/msg/pose_stamped.hpp"
+#include "nav2_costmap_2d/costmap_2d_ros.hpp"
+#include "nav2_costmap_2d/costmap_subscriber.hpp"
+#include "nav_msgs/msg/occupancy_grid.hpp"
+
 
 #include "rclcpp/rclcpp.hpp"
+
+#define COSTMAP_THRESHOLD 200
+
+using std::placeholders::_1;
 
 namespace bt_behavior
 {
@@ -34,13 +45,40 @@ GetNextWp::GetNextWp(
   const BT::NodeConfiguration & conf)
 : BT::ActionNodeBase(xml_tag_name, conf)
 {
+  
+
   config().blackboard->get("node", node_);
+  costmap_sub_ = node_->create_subscription<nav_msgs::msg::OccupancyGrid> ("/global_costmap/costmap", rclcpp::QoS(5).transient_local().reliable(), std::bind(&GetNextWp::mapCallback, this, _1));
   node_->declare_parameter("waypoints");
   wp_names_ = node_->get_parameter("waypoints").as_string_array();
 
   RCLCPP_INFO(
     node_->get_logger(), "GETNEXTWP init\n");
 }
+
+void
+GetNextWp::mapCallback(const nav_msgs::msg::OccupancyGrid::SharedPtr msg){
+  map_msg_ = msg;
+}
+
+
+bool
+GetNextWp::coordsInMap(double x, double y){
+
+  MyCostmap costmap(*map_msg_);
+
+  if (fabs(costmap.getSizeInMetersX()) < fabs(x) || fabs(costmap.getSizeInMetersY()) < fabs(y)){
+    // the coords are out of the max size of the map
+    return false;
+  }
+  unsigned int i,j;
+  
+  costmap.worldToMap(x, y, i, j);
+
+  // check if the point to go is free.; // check if the point to go is free (or relatively free).
+  return costmap.getCost(i, j) != LETHAL_OBSTACLE && costmap.getCost(i, j) != NO_INFORMATION;
+}
+
 
 void
 GetNextWp::halt()
@@ -50,7 +88,15 @@ GetNextWp::halt()
 
 BT::NodeStatus
 GetNextWp::tick()
-{
+{ 
+  RCLCPP_INFO(node_->get_logger(), "Entered tick GETNEXTWP\n");
+
+  if(map_msg_ == nullptr){
+    RCLCPP_INFO(node_->get_logger(), "[GETNEXTWP] Map not recevived yet. Returning RUNNING\n");
+
+    return BT::NodeStatus::RUNNING;
+  }
+
   if (wp_names_.empty()) {
     RCLCPP_INFO(
       node_->get_logger(), "GETNEXTWP: All waypoints sent. Returning FAILURE");
@@ -66,6 +112,23 @@ GetNextWp::tick()
   node_->declare_parameter(wp_str.c_str());
   geometry_msgs::msg::PoseStamped wp;
   std::vector<double> coords = node_->get_parameter(wp_str.c_str()).as_double_array();
+
+  
+  std_msgs::msg::Bool status;
+
+  if(! coordsInMap(coords.at(0), coords.at(1))){
+    // the coords is out of the map
+    //put the ouput port the state = 0
+    RCLCPP_INFO(node_->get_logger(), "The coords %.2f,%.2f are not a free space\n", coords.at(0), coords.at(1));
+    status.data = false;
+    setOutput("status", status);
+    setOutput("status_int", 0);
+    return BT::NodeStatus::SUCCESS;
+  }
+
+  status.data = true;
+  setOutput("status", status);
+  setOutput("status_int", 1);
 
   RCLCPP_INFO(
     node_->get_logger(), "x: %.2f, y: %.2f", coords.at(0), coords.at(1));

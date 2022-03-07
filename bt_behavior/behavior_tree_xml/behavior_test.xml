@@ -4,30 +4,22 @@
     <BehaviorTree ID="BehaviorTree">
         <KeepRunningUntilFailure>
             <Sequence>
-                <Action ID="GetNextWp" waypoint="{wp}" status="{st}" status_int="{st_int}"/>
-                <BlackboardCheckInt return_on_mismatch="SUCCESS" value_A="{st_int}" value_B="1">
+                <Action ID="GetNextWp" status="{st}" waypoint="{wp}"/>
+                <BlackboardCheckInt return_on_mismatch="SUCCESS" value_A="{aa}" value_B="2">
                     <ForceSuccess>
                         <Action ID="Move" goal="{wp}" status="{st}"/>
                     </ForceSuccess>
                 </BlackboardCheckInt>
-                <!--Action ID="SoundFeedback" status="{st}"/>
-                <!Action ID="LedFeedback" status="{st}"/-->
-                <Delay delay_msec="400">
-                    <Action ID="SoundFeedback" status="{st}"/>
-                </Delay>
+                <Action ID="SoundFeedback" status="{st}"/>
             </Sequence>
         </KeepRunningUntilFailure>
     </BehaviorTree>
     <!-- ////////// -->
     <TreeNodesModel>
         <Action ID="GetNextWp">
-            <output_port name="waypoint"/>
             <output_port name="status"/>
-            <output_port name="status_int"/>
+            <output_port name="waypoint"/>
         </Action>
-        <!--Action ID="LedFeedback">
-            <input_port name="status"/>
-        </Action-->
         <Action ID="Move">
             <input_port name="goal"/>
             <output_port name="status"/>

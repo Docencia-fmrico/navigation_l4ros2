@@ -12,17 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef BT_BEHAVIOR__MOVE_HPP_
-#define BT_BEHAVIOR__MOVE_HPP_
+#ifndef BT_BEHAVIOR__LED_FEEDBACK_HPP_
+#define BT_BEHAVIOR__LED_FEEDBACK_HPP_
 
 #include <string>
 #include <memory>
 
-#include "geometry_msgs/msg/pose_stamped.hpp"
-#include "nav2_msgs/action/navigate_to_pose.hpp"
-#include "kobuki_ros_interfaces/msg/sound.hpp"
-#include "kobuki_ros_interfaces/msg/led.hpp"
 #include "std_msgs/msg/bool.hpp"
+#include "kobuki_ros_interfaces/msg/led.hpp"
 
 #include "bt_behavior/ctrl_support/BTActionNode.hpp"
 #include "behaviortree_cpp_v3/behavior_tree.h"
@@ -33,33 +30,28 @@
 namespace bt_behavior
 {
 
-class Move : public bt_behavior::BtActionNode<nav2_msgs::action::NavigateToPose>
+class LedFeedback : public BT::ActionNodeBase
 {
 public:
-  explicit Move(
+  explicit LedFeedback(
     const std::string & xml_tag_name,
-    const std::string & action_name,
     const BT::NodeConfiguration & conf);
 
-  void on_tick() override;
-  BT::NodeStatus on_success() override;
-  // We'll need also on_aborted() and on_cancelled() to implement the behavior in case of failing
-
-  BT::NodeStatus on_aborted() override;
-  BT::NodeStatus on_cancelled() override;
-  // BT::NodeStatus abort();
+  BT::NodeStatus tick();
+  void halt();
 
   static BT::PortsList providedPorts()
   {
     return {
-      BT::InputPort<geometry_msgs::msg::PoseStamped>("goal"),
-      BT::OutputPort<std_msgs::msg::Bool>("status")
+      BT::InputPort<std_msgs::msg::Bool>("status")
     };
   }
 
 private:
-  std::shared_ptr<rclcpp::Node> sound_node_;
+  std::shared_ptr<rclcpp::Node> led_node_;
+  rclcpp::Publisher<kobuki_ros_interfaces::msg::Led>::SharedPtr led_publisher_;
+  static bool on_off_;
 };
 
 }  // namespace bt_behavior
-#endif  // BT_BEHAVIOR__MOVE_HPP_
+#endif  // BT_BEHAVIOR__LED_FEEDBACK_HPP_

@@ -31,6 +31,8 @@
 
 #include "rclcpp/rclcpp.hpp"
 
+#define COSTMAP_THRESHOLD 200
+
 using std::placeholders::_1;
 
 namespace bt_behavior
@@ -46,7 +48,7 @@ GetNextWp::GetNextWp(
   
 
   config().blackboard->get("node", node_);
-  costmap_sub_ = node_->create_subscription<nav_msgs::msg::OccupancyGrid> ("/map", rclcpp::QoS(5).transient_local().reliable(), std::bind(&GetNextWp::mapCallback, this, _1));
+  costmap_sub_ = node_->create_subscription<nav_msgs::msg::OccupancyGrid> ("/global_costmap/costmap", rclcpp::QoS(5).transient_local().reliable(), std::bind(&GetNextWp::mapCallback, this, _1));
   node_->declare_parameter("waypoints");
   wp_names_ = node_->get_parameter("waypoints").as_string_array();
 
@@ -73,7 +75,8 @@ GetNextWp::coordsInMap(double x, double y){
   
   costmap.worldToMap(x, y, i, j);
 
-  return costmap.getCost(i, j) == FREE_SPACE; // check if the point to go is completely free
+  // check if the point to go is free.; // check if the point to go is free (or relatively free).
+  return costmap.getCost(i, j) != LETHAL_OBSTACLE && costmap.getCost(i, j) != NO_INFORMATION;
 }
 
 

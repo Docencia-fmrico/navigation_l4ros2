@@ -51,7 +51,6 @@ include_directories(include ${ZMQ_INCLUDE_DIRS})
 add_library(br2_patrol_bt_node SHARED src/bt_behavior/Patrol.cpp)
 add_library(br2_move_bt_node SHARED src/bt_behavior/Move.cpp)
 add_library(br2_sound_feedback_bt_node SHARED src/bt_behavior/SoundFeedback.cpp)
-add_library(br2_led_feedback_bt_node SHARED src/bt_behavior/LedFeedback.cpp)
 add_library(br2_get_waypoint_bt_node SHARED src/bt_behavior/GetNextWp.cpp src/bt_behavior/MyCostmap.cpp)
 
 list(APPEND plugin_libs
@@ -59,7 +58,6 @@ list(APPEND plugin_libs
   br2_patrol_bt_node
   br2_move_bt_node
   br2_sound_feedback_bt_node
-  br2_led_feedback_bt_node
 )
 
 foreach(bt_plugin ${plugin_libs})

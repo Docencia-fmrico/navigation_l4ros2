@@ -36,7 +36,7 @@ int main(int argc, char * argv[])
 
   factory.registerFromPlugin(loader.getOSName("br2_move_bt_node"));
   factory.registerFromPlugin(loader.getOSName("br2_get_waypoint_bt_node"));
-  factory.registerFromPlugin(loader.getOSName("br2_led_feedback_bt_node"));
+  //factory.registerFromPlugin(loader.getOSName("br2_led_feedback_bt_node"));
   factory.registerFromPlugin(loader.getOSName("br2_sound_feedback_bt_node"));
 
   std::string pkgpath = ament_index_cpp::get_package_share_directory("bt_behavior");
